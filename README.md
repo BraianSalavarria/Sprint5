@@ -36,10 +36,9 @@ Incluye:
 ## 🛠️ Tecnologías utilizadas
 - **Node.js** (v18+)
 - **Express.js** (v5.1.0)
-- **MongoDB** (local o Atlas)
+- **MongoDB** (local)
 - **Mongoose** para modelado de datos
 - **EJS** y **Express-EJS-Layouts**
-- **Axios** para consumo de API externa
 - **Express-Validator** para validaciones
 - **Dotenv** para configuración de variables de entorno
 - **Morgan** para logs de peticiones
@@ -99,7 +98,7 @@ cp .env.example .env
 # Editar .env y agregar tus datos de MongoDB
 
 # Ejecutar el proyecto
-npm start
+node app.mjs
 ```
 
 ---

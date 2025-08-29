@@ -7,8 +7,7 @@
 
 > **Autor:** Braian Salavarria  
 > **Tema:** Gestión de países hispanohablantes (API externa)  
-> **Duración sugerida:** 1–2 semanas  
-> **Dificultad:** Intermedia con extras avanzados
+
 
 ---
 
@@ -87,7 +86,7 @@ src/
 ## ⚙️ Instalación y configuración
 ```bash
 # Clonar el repositorio
-git clone https://github.com/tu-usuario/gestion-paises.git
+https://github.com/BraianSalavarria/Sprint5.git
 cd gestion-paises
 
 # Instalar dependencias
@@ -137,21 +136,6 @@ npm start
 
 ---
 
-## 📊 Posibles mejoras (Desafío avanzado)
-- Búsqueda y filtrado en el dashboard.
-- Paginación del listado.
-- Cacheo del consumo de API.
-- Normalización y cálculo de Gini.
-- Exportación a CSV del listado filtrado.
-
----
-
-## 🧪 Tests
-```bash
-# Ejecutar tests
-npm test
-```
-
 ---
 
 ## ✨ Buenas prácticas implementadas
@@ -165,7 +149,7 @@ npm test
 
 ## 👨‍💻 Autor
 **Braian Salavarria**  
-[GitHub](https://github.com/tu-usuario) • [LinkedIn](https://linkedin.com/in/tu-perfil)
+[GitHub](https://github.com/BraianSalavarria) • [LinkedIn](https://www.linkedin.com/in/braian-salavarria-688aaa251/)
 
 ---
 

@@ -1,0 +1,255 @@
+<style>
+    .error-page-body {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 80vh;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        padding: 2rem 0;
+    }
+    
+    .error-container {
+        min-height: 70vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .error-card {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        animation: fadeInUp 0.8s ease-out;
+    }
+    
+    .error-header {
+        background: linear-gradient(45deg, #ff6b6b, #ee5a52);
+        color: white;
+        padding: 2rem;
+        text-align: center;
+        position: relative;
+    }
+    
+    .error-header::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="white" opacity="0.1"/><circle cx="80" cy="40" r="1.5" fill="white" opacity="0.1"/><circle cx="40" cy="80" r="1" fill="white" opacity="0.1"/></svg>');
+        animation: float 6s ease-in-out infinite;
+    }
+    
+    .error-code {
+        font-size: 4rem;
+        font-weight: bold;
+        margin: 0;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        position: relative;
+        z-index: 1;
+    }
+    
+    .error-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        position: relative;
+        z-index: 1;
+        animation: pulse 2s infinite;
+    }
+    
+    .error-body {
+        padding: 2.5rem;
+        text-align: center;
+    }
+    
+    .error-title {
+        color: #333;
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+        font-weight: 600;
+    }
+    
+    .error-description {
+        color: #666;
+        font-size: 1.1rem;
+        line-height: 1.6;
+        margin-bottom: 2rem;
+    }
+    
+    .btn-error-primary {
+        background: linear-gradient(45deg, #667eea, #764ba2);
+        border: none;
+        padding: 12px 30px;
+        font-size: 1.1rem;
+        border-radius: 50px;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-block;
+        color: white;
+    }
+    
+    .btn-error-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+        background: linear-gradient(45deg, #5a67d8, #6b46c1);
+        color: white;
+    }
+    
+    .btn-error-secondary {
+        background: transparent;
+        border: 2px solid #667eea;
+        color: #667eea;
+        padding: 10px 28px;
+        font-size: 1rem;
+        border-radius: 50px;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-block;
+        margin-left: 10px;
+    }
+    
+    .btn-error-secondary:hover {
+        background: #667eea;
+        color: white;
+        transform: translateY(-2px);
+    }
+    
+    .support-info {
+        background: #f8f9ff;
+        border-radius: 15px;
+        padding: 1.5rem;
+        margin-top: 2rem;
+        border-left: 4px solid #667eea;
+    }
+    
+    .support-info h6 {
+        color: #333;
+        margin-bottom: 0.5rem;
+    }
+    
+    .support-info p {
+        color: #666;
+        margin: 0;
+        font-size: 0.9rem;
+    }
+    
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    @keyframes pulse {
+        0%, 100% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.1);
+        }
+    }
+    
+    @keyframes float {
+        0%, 100% {
+            transform: translateY(0px) rotate(0deg);
+        }
+        50% {
+            transform: translateY(-10px) rotate(5deg);
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .error-card {
+            margin: 1rem;
+            border-radius: 15px;
+        }
+        
+        .error-code {
+            font-size: 3rem;
+        }
+        
+        .error-title {
+            font-size: 1.5rem;
+        }
+        
+        .error-description {
+            font-size: 1rem;
+        }
+        
+        .btn-error-secondary {
+            margin-left: 0;
+            margin-top: 10px;
+            display: block;
+            width: 100%;
+        }
+    }
+</style>
+
+<div class="error-page-body">
+    <div class="container-fluid error-container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-8 col-sm-10">
+                <div class="card error-card border-0">
+                    <div class="error-header">
+                        <div class="error-icon">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <h1 class="error-code">500</h1>
+                    </div>
+                    
+                    <div class="error-body">
+                        <h2 class="error-title">¡Oops! Error del Servidor</h2>
+                        <p class="error-description">
+                            Lo sentimos, algo salió mal en nuestros servidores. 
+                            <% if (typeof message !== 'undefined' && message) { %>
+                                <br><strong><%= message %></strong>
+                            <% } else { %>
+                                Nuestro equipo técnico ha sido notificado y está trabajando para resolver el problema lo antes posible.
+                            <% } %>
+                        </p>
+                        
+                        <div class="mt-4">
+                            <a href="/countries" class="btn btn-error-primary">
+                                <i class="fas fa-home me-2"></i>
+                                Ir al Inicio
+                            </a>
+                            <a href="javascript:history.back()" class="btn btn-error-secondary">
+                                <i class="fas fa-arrow-left me-2"></i>
+                                Volver Atrás
+                            </a>
+                        </div>
+                        
+                        <div class="support-info">
+                            <h6><i class="fas fa-info-circle me-2"></i>¿Necesitas ayuda?</h6>
+                            <p>
+                                Si el problema persiste, puedes contactar a nuestro equipo de soporte técnico 
+                                en <strong>soporte@tudominio.com</strong> o intentar nuevamente en unos minutos.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Efecto de hover en los botones
+        const buttons = document.querySelectorAll('.btn-error-primary, .btn-error-secondary');
+        buttons.forEach(button => {
+            button.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-2px)';
+            });
+            
+            button.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+    });
+</script>

@@ -1,0 +1,141 @@
+<div class="container my-4">
+  <div class="card shadow-lg border-0 rounded-4">
+    <div class="card-header bg-primary text-white text-center rounded-top">
+      <h2 class="mb-0">🌎 Nuevo País</h2>
+    </div>
+
+    <div class="card-body p-4">
+      <form id="editcountrie">
+        <!-- <input type="hidden" name="id" id="id">  -->
+
+        <div class="row g-3">
+          <!-- Columna izquierda -->
+          <div class="col-md-6">
+            <div class="mb-3">
+              <label for="nombreComun" class="form-label">Nombre Común:</label>
+              <input type="text" class="form-control" id="nombreComun" name="nombreComun" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="nombreOficial" class="form-label">Nombre Oficial:</label>
+              <input type="text" class="form-control" id="nombreOficial" name="nombreOficial" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="capital" class="form-label">Capital:</label>
+              <input type="text" class="form-control" id="capital" name="capital" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="region" class="form-label">Región:</label>
+              <input type="text" class="form-control" id="region" name="region" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="subregion" class="form-label">Subregión:</label>
+              <input type="text" class="form-control" id="subregion" name="subregion" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="fronteras" class="form-label">Fronteras:</label>
+              <input type="text" class="form-control" id="fronteras" name="fronteras" placeholder="Ej: BRA, URY, BOL" required>
+            </div>
+          </div>
+
+          <!-- Columna derecha -->
+          <div class="col-md-6">
+            <div class="mb-3">
+              <label for="poblacion" class="form-label">Población:</label>
+              <input type="number" class="form-control" id="poblacion" name="poblacion" required min="0">
+            </div>
+
+            <div class="mb-3">
+              <label for="area" class="form-label">Área (km²):</label>
+              <input type="number" class="form-control" id="area" name="area" required min="1">
+            </div>
+
+            <div class="mb-3">
+              <label for="independent" class="form-label">Independiente:</label>
+              <select class="form-select" id="independent" name="independent">
+                <option value="true" >Sí</option>
+                <option value="false">No</option>
+              </select>
+            </div>
+
+            <div class="mb-3">
+              <label for="timezones" class="form-label">Zona Horaria:</label>
+              <input type="text" class="form-control" id="timezones" name="timezones" placeholder="Ej: UTC+03:00, UTC-05:00" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="creador" class="form-label">Creador:</label>
+              <input type="text" class="form-control" id="creador" name="creador">
+            </div>
+          </div>
+        </div>
+        
+          
+      <!-- Índice Gini -->
+            <div class="mt-4">
+            <label class="form-label fw-bold"> Índice Gini</label>
+            
+            <div id="gini-container" class="space-y-3">
+                
+                <div class="row gini-entry mb-3 p-3 border rounded shadow-sm bg-light col-md-8">
+                    <!-- Año -->
+                    <div class="col-md-4">
+                    <label for="giniYear" class="form-label">Año</label>
+                    <input type="number" id="giniYear" name="giniYear" class="form-control">
+                    </div>
+                    <!-- Valor -->
+                    <div class="col-md-4">
+                    <label for="giniValue" class="form-label">Valor (%)</label>
+                    <input type="number" step="0.1" id="giniValue" name="giniValue" class="form-control">
+                    </div>
+
+                    <!-- Botones agregar y quitar -->
+                    <div class="col-md-4 d-flex align-items-end">
+                        <button type="button" class="btn btn-success w-100 me-3" id="add-gini" >Agregar</button>
+                        <button type="button" class="btn btn-danger remove-gini w-100" >Borrar</button>
+                    </div>
+
+          </div>
+
+        
+            <!-- Tabla que muestra los indices gini y las opciones de eliminar -->
+
+      <div class="table-responsive shadow rounded  col-md-6">
+        <table class="table table-hover align-middle text-center" id="tabla-paises">
+                <thead class="table-primary">
+                      <tr>
+                          <th>Año</th>
+                          <th>Valor</th>
+                          <th>Acción</th>
+                          
+                      </tr>
+                </thead>
+                <tbody>
+                    
+                         <tr id="mensaje"><td colspan="2"><p class="text-muted fst-italic">No hay datos de Gini disponibles.</p></td></tr> 
+                       
+
+                </tbody>
+        </table>
+      </div>  
+
+
+
+
+        <!-- Botones del formulario -->
+        <div class="d-flex justify-content-end gap-3 mt-4">
+          <button type="reset" class="btn btn-danger btn-md">Cancelar</button>
+          <button type="submit" class="btn btn-success btn-md">Guardar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<script src="/js/addCountrie.js"></script>
+

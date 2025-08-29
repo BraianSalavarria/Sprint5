@@ -1,0 +1,109 @@
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+            <!-- Card principal -->
+            <div class="card shadow-lg border-0 rounded-4">
+                <div class="card-body p-5 text-center">
+                    
+                    <!-- Header con ícono -->
+                    <h1 class="fw-bold mb-3 text-gradient">
+                        🌍 Administrador de Países
+                    </h1>
+                    <p class="lead text-muted fs-5">
+                        Explora, administra y consulta información detallada sobre <strong>todos los países del mundo</strong>.  
+                        Los datos se actualizan en tiempo real gracias a la API  
+                        <a href="https://restcountries.com/" target="_blank" class="text-decoration-none">REST Countries</a>.
+                    </p>
+
+                    <!-- Botones principales -->
+                    <div class="d-flex justify-content-center gap-3 my-4">
+                        <a href="/countries/lista" class="btn btn-primary btn-lg px-4 shadow-sm">
+                            <i class="bi bi-list-ul"></i> Ver lista de países
+                        </a>
+                        <a href="/countries/agregar" class="btn btn-success btn-lg px-4 shadow-sm">
+                            <i class="bi bi-plus-circle"></i> Agregar país
+                        </a>
+                    </div>
+
+                    <!-- Línea divisoria -->
+                    <hr class="my-4">
+
+                    <!-- Sección de estadísticas -->
+                    <div class="row g-4 text-center">
+                        <div class="col-md-4">
+                            <div class="card stat-card shadow-sm border-0 rounded-4">
+                                <div class="card-body">
+                                    <i class="bi bi-globe-asia fs-1 text-primary"></i>
+                                    <h2 class="fw-bold text-dark mt-2">195</h2>
+                                    <p class="text-muted mb-0">Países en total</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card stat-card shadow-sm border-0 rounded-4">
+                                <div class="card-body">
+                                    <i class="bi bi-geo-alt-fill fs-1 text-success"></i>
+                                    <h2 class="fw-bold text-dark mt-2">35</h2>
+                                    <p class="text-muted mb-0">Países en America</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card stat-card shadow-sm border-0 rounded-4">
+                                <div class="card-body">
+                                    <i class="bi bi-flag-fill fs-1 text-warning"></i>
+                                    <h2 class="fw-bold text-dark mt-2">54</h2>
+                                    <p class="text-muted mb-0">Países en África</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sección extra de funcionalidades -->
+                    <div class="mt-5">
+                        <h3 class="fw-bold mb-4 text-dark">✨ ¿Qué puedes hacer aquí?</h3>
+                        <div class="row g-4">
+                            <div class="col-md-4">
+                                <div class="card shadow-sm border-0 rounded-4 h-100">
+                                    <div class="card-body">
+                                        <i class="bi bi-search fs-1 text-info"></i>
+                                        <h5 class="fw-bold mt-3">Buscar Países</h5>
+                                        <p class="text-muted">Encuentra información detallada sobre cualquier país de America en segundos.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card shadow-sm border-0 rounded-4 h-100">
+                                    <div class="card-body">
+                                        <i class="bi bi-pencil-square fs-1 text-primary"></i>
+                                        <h5 class="fw-bold mt-3">Gestionar Información</h5>
+                                        <p class="text-muted">Agrega, edita o elimina países fácilmente desde una interfaz intuitiva.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card shadow-sm border-0 rounded-4 h-100">
+                                    <div class="card-body">
+                                        <i class="bi bi-bar-chart-line fs-1 text-success"></i>
+                                        <h5 class="fw-bold mt-3">Analizar Datos</h5>
+                                        <p class="text-muted">Visualiza estadísticas rápidas y compara países.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- CSS personalizado para el título -->
+<style>
+    .text-gradient {
+        background: linear-gradient(45deg, #007bff, #00c6ff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+</style>

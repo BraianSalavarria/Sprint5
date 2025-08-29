@@ -1,0 +1,24 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card shadow-lg border-danger">
+        <div class="card-body text-center">
+          <h4 class="card-title text-danger mb-3">⚠️ Confirmar eliminación</h4>
+          <p class="card-text mb-4">
+            <%= message %>
+          </p>
+
+          <!-- Botones -->
+          <form action="/countries/eliminarTodos?_method=DELETE" method="POST">
+            <button type="submit" class="btn btn-danger me-2">
+              Sí, eliminar
+            </button>
+            <a href="javascript:history.back()" class="btn btn-secondary">
+              Cancelar
+            </a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

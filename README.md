@@ -1,13 +1,12 @@
 # 🌎 Gestión de Países Hispanohablantes
 
 ![Node.js](https://img.shields.io/badge/Node.js-18.x-green?style=for-the-badge&logo=node.js)
-![Express](https://img.shields.io/badge/Express.js-4.x-blue?style=for-the-badge&logo=express)
+![Express](https://img.shields.io/badge/Express.js-5.1.0-blue?style=for-the-badge&logo=express)
 ![MongoDB](https://img.shields.io/badge/MongoDB-6.x-darkgreen?style=for-the-badge&logo=mongodb)
 ![EJS](https://img.shields.io/badge/EJS-Templates-yellow?style=for-the-badge&logo=ejs)
 
 > **Autor:** Braian Salavarria  
-> **Tema:** Gestión de países hispanohablantes (API externa)  
-
+> **Tema:** Gestión de países hispanohablantes (API externa)
 
 ---
 
@@ -36,10 +35,10 @@ Incluye:
 
 ## 🛠️ Tecnologías utilizadas
 - **Node.js** (v18+)
-- **Express.js** (v4+)
+- **Express.js** (v5.1.0)
 - **MongoDB** (local o Atlas)
 - **Mongoose** para modelado de datos
-- **EJS** para renderizado del lado del servidor
+- **EJS** y **Express-EJS-Layouts**
 - **Axios** para consumo de API externa
 - **Express-Validator** para validaciones
 - **Dotenv** para configuración de variables de entorno
@@ -58,8 +57,7 @@ src/
 ├── models/
 │   └── Countries.mjs           # Esquema de Mongoose
 ├── public/
-│   ├── img/
-│   │   └── home.png            # Imagen principal
+│   ├── img/                    # Recursos estáticos
 │   └── js/
 │       ├── addCountrie.js
 │       ├── editCountrie.js
@@ -78,7 +76,11 @@ src/
 ├── views/
 │   ├── pages/                  # Páginas EJS
 │   └── partials/               # Componentes reutilizables
-└── app.mjs                     # Configuración principal de Express
+├── .env                        # Variables de entorno
+├── .gitignore                 # Archivos ignorados en Git
+├── app.mjs                    # Configuración principal de Express
+├── package.json               # Dependencias y scripts
+└── package-lock.json          # Control de versiones de dependencias
 ```
 
 ---
@@ -86,7 +88,7 @@ src/
 ## ⚙️ Instalación y configuración
 ```bash
 # Clonar el repositorio
-https://github.com/BraianSalavarria/Sprint5.git
+git clone https://github.com/BraianSalavarria/Sprint5.git
 cd gestion-paises
 
 # Instalar dependencias
@@ -133,8 +135,6 @@ npm start
   - Área: número positivo.
   - Población: entero positivo.
   - Gini: entre 0 y 100.
-
----
 
 ---
 
